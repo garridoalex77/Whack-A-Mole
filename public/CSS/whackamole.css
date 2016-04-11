@@ -1,0 +1,17 @@
+#grid {
+    padding: 100px;
+    height: 500px;
+    width: 500px;
+    border: 1px solid black;
+}
+
+.square {
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+
+.square:nth-child(4n+1) {
+    clear: left;
+}
