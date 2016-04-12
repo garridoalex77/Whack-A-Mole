@@ -1,17 +1,57 @@
+body {
+    background-image: url("/IMG/GoTbg.png");
+}
+
+h1 {
+    margin-left: 100px;
+    font-weight: 2em;
+    color: white;
+}
+#title {
+    float: left;
+}
+#score {
+    margin-left: 80px;
+    float: left;
+}
+#timer {
+    margin-left: 40px;
+    float: left;
+}
+#start {
+    background-color: white;
+    border-radius: 10px;
+    font-size: 1.5em;
+    float: left;
+    clear: left;
+    padding: 10px 40px 10px 40px;
+    margin-left: 250px;
+    width: 25%;
+    outline: none;
+}
 #grid {
+    float: left;
+    margin-left: 100px;
     padding: 100px;
+    padding-top: 10px;
     height: 500px;
     width: 500px;
-    border: 1px solid black;
 }
 
 .square {
+    background-color: rgba(130, 130, 130, .3);
     border: 1px solid black;
-    width: 100px;
+    width: 90px;
     height: 100px;
     float: left;
 }
 
 .square:nth-child(4n+1) {
     clear: left;
+}
+
+.pop {
+    background-repeat: no-repeat;
+    background-position: center center;
+    
 }
