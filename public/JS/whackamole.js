@@ -1,17 +1,26 @@
 $(function() { 
+"use strict"
     var $square = $('.square');
     var $start = ('#start');
     var $title = $('#title');
     var $timer = $('#timer');
+    var $score = $('#score');
     var popUp = $square;
     var i = 0;
     var iconsArray = [];
     var time = 50;
 
+    $('#easy').click(function() {
+
+    })
+
     $($start).click(function() {
+        time = 50;
+        i = 0;
+        $score.html("Score: " + i)
         function togglePop() {
             var random = parseInt(Math.random()*($square.length));
-            var randomPic = parseInt(Math.random()*6);
+            var randomPic = parseInt(Math.random()*8);
             var popUp = $square[random];
             $(popUp).addClass('pop');
             $(popUp).css('background-image', 'url("/IMG/GoTicons'+[randomPic]+'.png")');
@@ -31,7 +40,7 @@ $(function() {
                 if ($(this).hasClass('pop')) {
                     i++;
                     time++;
-                    $('#score').html("Score: " + i)
+                    $score.html("Score: " + i)
                     setTimeout(function() {
                         $timer.html("Time: " + time + "+1")
                     }, 300)                    
@@ -51,10 +60,14 @@ $(function() {
                 $title.html("Game Over");
                 setTimeout(function() {
                     $title.html("Whack-A-Something");
-                    time = 30;
-                    score = 0;
+                    // location.reload();
                 }, 2000)
             }
         }, 1000)
+        if (time > 0) {
+            $($start).prop("disabled", true);
+        } else {
+            $($start).prop("enabled", true);
+        }
     })
 });
