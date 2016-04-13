@@ -7,13 +7,16 @@ h1 {
     font-weight: 2em;
     color: white;
 }
+
 #title {
     float: left;
 }
+
 #score {
     margin-left: 80px;
     float: left;
 }
+
 #timer {
     margin-left: 40px;
     float: left;
@@ -29,6 +32,7 @@ h1 {
     width: 25%;
     outline: none;
 }
+
 #grid {
     float: left;
     margin-left: 100px;
@@ -44,6 +48,7 @@ h1 {
     width: 90px;
     height: 100px;
     float: left;
+    cursor: url('/IMG/crow.png'), auto;
 }
 
 .square:nth-child(4n+1) {
@@ -53,5 +58,4 @@ h1 {
 .pop {
     background-repeat: no-repeat;
     background-position: center center;
-    
 }

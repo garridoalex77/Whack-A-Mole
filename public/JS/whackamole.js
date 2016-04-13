@@ -9,11 +9,11 @@ $(function() {
     var i = 0;
     var iconsArray = [];
     var time = 50;
-
+    //Easy button
     $('#easy').click(function() {
-
+        console.log("no")
     })
-
+    //Game Function
     $($start).click(function() {
         time = 50;
         i = 0;
@@ -22,20 +22,19 @@ $(function() {
             var random = parseInt(Math.random()*($square.length));
             var randomPic = parseInt(Math.random()*8);
             var popUp = $square[random];
-            $(popUp).addClass('pop');
-            $(popUp).css('background-image', 'url("/IMG/GoTicons'+[randomPic]+'.png")');
+            $(popUp).addClass('pop').css('background-image', 'url("/IMG/GoTicons'+[randomPic]+'.png")');
+            //Difficulty Increase
             if ( i > 10) {
                 setTimeout(function() {
                     $title.html("Level 2");
-                    $(popUp).removeClass('pop');
-                    $(popUp).css('background-image', '');
+                    $(popUp).removeClass('pop').css('background-image', '');
                 }, 700)
             } else {
                 setTimeout(function() {
-                    $(popUp).removeClass('pop');
-                    $(popUp).css('background-image', '');
+                    $(popUp).removeClass('pop').css('background-image', '');
                 }, 1000)
             }
+            //Score Up
             $(popUp).click(function() {
                 if ($(this).hasClass('pop')) {
                     i++;
@@ -45,10 +44,10 @@ $(function() {
                         $timer.html("Time: " + time + "+1")
                     }, 300)                    
                 }
-                $(this).removeClass('pop');
-                $(this).css('background-image', '');
+                $(this).removeClass('pop').css('background-image', '');
             })
         }
+        // Interval for Pop & Timer
         var gameTime = setInterval(togglePop, 2000);
         var gameOver = setInterval(function() {
             $timer.html("Time: " + time)
@@ -60,10 +59,10 @@ $(function() {
                 $title.html("Game Over");
                 setTimeout(function() {
                     $title.html("Whack-A-Something");
-                    // location.reload();
                 }, 2000)
             }
         }, 1000)
+        // Disable Start Button
         if (time > 0) {
             $($start).prop("disabled", true);
         } else {
